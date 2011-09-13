@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.google.visualization</groupId>
+  <artifactId>visualization-datasource</artifactId>
+  <version>1.1.1</version>
+
+  <packaging>pom</packaging>
+  <name>Google Visualization Data Source Library Umbrella</name>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <properties>
+    <maven.clover.multiproject>true</maven.clover.multiproject>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <jettyVersion>7.2.0.v20101020</jettyVersion>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <!-- our modules -->
+
+      <dependency>
+        <artifactId>visualization-datasource-core</artifactId>
+        <groupId>${project.groupId}</groupId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <artifactId>visualization-datasource-examples</artifactId>
+        <groupId>${project.groupId}</groupId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <!-- 3rd party  -->
+      <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>1.1.1</version>
+      </dependency>
+
+      <dependency>
+        <groupId>commons-lang</groupId>
+        <artifactId>commons-lang</artifactId>
+        <version>2.4</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>r08</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.ibm.icu</groupId>
+        <artifactId>icu4j</artifactId>
+        <version>4.8.1.1</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-server</artifactId>
+        <version>${jettyVersion}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>net.sf.opencsv</groupId>
+        <artifactId>opencsv</artifactId>
+        <version>2.0</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <modules>
+    <module>core</module>
+    <module>examples</module>
+  </modules>
+  <reporting>
+    <plugins>
+      <!-- surefire runs unit tests -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>2.8.1</version>
+      </plugin>
+      <!-- generate java doc -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.8</version>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>
