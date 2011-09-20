@@ -13,7 +13,7 @@
     <relativePath>../pom.xml</relativePath>
   </parent>
 
-  <!--<packaging>war</packaging>-->
+  <packaging>war</packaging>
   <name>Google Visualization Data Source Library Examples</name>
   <licenses>
     <license>

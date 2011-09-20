@@ -18,7 +18,7 @@
     var query = new google.visualization.Query('simpleexample?tq=select name,population');
     query.send(handleSimpleDsResponse);
 
-    query = new google.visualization.Query('csv?url=http://localhost:8080/myWebApp/csv_example.csv');
+    query = new google.visualization.Query('csv?url=http://localhost:8080/csv_example.csv');
     query.send(handleCsvDsResponse);
 
     query = new google.visualization.Query('advanced?tableId=planets&tq=select planet,mass');
@@ -67,7 +67,7 @@
   function drawToolbar() {
     var components = [
         {type: 'html', datasource: 'http://localhost:8080/myWebApp/simpleexample'},
-        {type: 'csv', datasource: 'http://localhost:8080/myWebApp/simpleexample'},
+        {type: 'csv', datasource: 'http://localhost:8080/myWebApp/simpleexample'}
     ];
 
     var container = document.getElementById('toolbar_div');
